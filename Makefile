@@ -12,6 +12,7 @@ build: clean
 	go build -o $(TARGET)
 
 build-deps: clean-deps
+	git submodule update --init --recursive
 	make -C ./extern/lotus deps
 
 .PHONY: clean clean-lotus switch-interop switch-master
