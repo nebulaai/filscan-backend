@@ -23,6 +23,7 @@ func main() {
 	//jsonrpc.AddCustomizeCORSHeader("sid", "token", "X-Force-Token", "X-Force-Key")
 	Logger := rawLogger.Sugar()
 
+
 	// 初始化 root mux
 	rootMux := jsonrpc.NewRootMux("", Logger)
 
@@ -104,6 +105,7 @@ func main() {
 	controllers.Run() //SynLotus
 
 	Logger.Info(fmt.Sprintf("server will listen %s:%s", listenAdd, httpport))
+	Logger.Warn(fmt.Sprintf("server will listen %s:%s", listenAdd, httpport))
 	// 开始监听并想向外提供服务
 	if err := httpServer.ListenAndServe(); err != nil {
 		Logger.Errorf("http server listen and serve error, cause=%v", err)

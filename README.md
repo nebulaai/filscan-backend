@@ -69,6 +69,11 @@ The application will check lotus and mongo’s status. The application will stop
 
 Check document [here](Filscan_Interface_v1.0.md)
 
+## Run as Docker
+
+docker run -d -p 27017:27017 --name mongodb mongo
+
+http://localhost:4396/
 
 ## License
 Dual-licensed under 
